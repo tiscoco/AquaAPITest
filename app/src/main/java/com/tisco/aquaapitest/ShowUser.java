@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -49,12 +50,16 @@ public class ShowUser extends AppCompatActivity {
     private UserModel model;
     AlertDialog alertDialog;
     AlertDialog.Builder alertbuilder;
+    ProgressDialog pg;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_user);
+        assert getSupportActionBar() != null;
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle("User List");
 
         sp = getSharedPreferences("saved", Context.MODE_PRIVATE);
         requestQueue = Volley.newRequestQueue(this);
@@ -64,10 +69,19 @@ public class ShowUser extends AppCompatActivity {
 
 
     }
-
+    @Override
+    public boolean onSupportNavigateUp() {
+        finish();
+        return true;
+    }
     private class async_userlist extends AsyncTask<Void, Void, Void>{
         JSONArray baru;
-
+        @Override
+        protected void onPreExecute() {
+            pg = new ProgressDialog(ShowUser.this);
+            pg.setMessage("Please Wait");
+            pg.show();
+        }
         private void getuser(){
             RecyclerView recyclerView = findViewById(R.id.user_list);
 
@@ -141,6 +155,9 @@ public class ShowUser extends AppCompatActivity {
         @Override
         protected void onPostExecute(Void unused) {
             try {
+                if (pg.isShowing()){
+                    pg.dismiss();
+                }
                 getuser();
             } catch (Exception e){
                 e.printStackTrace();

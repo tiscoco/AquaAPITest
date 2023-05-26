@@ -51,8 +51,6 @@ public class LoginPage extends AppCompatActivity {
         pass =  pass_txt.getText().toString().trim();;
 
 
-
-
         login_btn.setOnClickListener(v -> {
             login();
         });

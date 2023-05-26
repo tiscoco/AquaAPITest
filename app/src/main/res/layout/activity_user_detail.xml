@@ -1,9 +1,162 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".UserDetail">
+    tools:context=".UserDetail"
+    android:orientation="vertical"
+    android:padding="16dp">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/id_userd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#2C3B53"
+            android:textSize="8pt"
+            android:text="id"
+            android:layout_alignParentStart="true"
+            />
+        <TextView
+            android:id="@+id/admin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#2C3B53"
+            android:textSize="8pt"
+            android:text="admin"
+            android:layout_alignParentEnd="true"
+            />
+    </RelativeLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="8pt"
+            android:textColor="#2C3B53"
+            android:text="Email: "/>
+        <TextView
+            android:id="@+id/email_det"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#2C3B53"
+            android:textSize="8pt"
+            android:text="KEYID"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/confirm_det"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#2C3B53"
+            android:textSize="8pt"
+            android:text="confirmed status"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="8pt"
+            android:textColor="#2C3B53"
+            android:text="Password status: "/>
+        <TextView
+            android:id="@+id/pass_sts"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#2C3B53"
+            android:textSize="8pt"
+            android:text="-"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="8pt"
+            android:textColor="#2C3B53"
+            android:text="Send Announcement: "/>
+        <TextView
+            android:id="@+id/announ"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#2C3B53"
+            android:textSize="8pt"
+            android:text="0"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="8pt"
+            android:textColor="#2C3B53"
+            android:text="Send Scan Result: "/>
+        <TextView
+            android:id="@+id/res"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#2C3B53"
+            android:textSize="8pt"
+            android:text="0"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="8pt"
+            android:textColor="#2C3B53"
+            android:text="send new risks: "/>
+        <TextView
+            android:id="@+id/newrisk_det"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#2C3B53"
+            android:textSize="8pt"
+            android:text="0"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="8pt"
+            android:textColor="#2C3B53"
+            android:text="Created at: "/>
+        <TextView
+            android:id="@+id/create"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#2C3B53"
+            android:textSize="8pt"
+            android:text="created at"/>
+    </LinearLayout>
+
+
+</LinearLayout>
